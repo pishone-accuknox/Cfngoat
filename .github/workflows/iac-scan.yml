@@ -24,7 +24,6 @@ jobs:
           skip_framework: 
           soft_fail:
           endpoint:
-          baseline: 
           token: ${{ secrets.TOKEN }}
           tenant_id: ${{ secrets.TENANT_ID }}
     
