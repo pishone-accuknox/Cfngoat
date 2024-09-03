@@ -1,0 +1,29 @@
+# Manual accuknox-install flow
+name: AccuKnox Install Workflow
+
+on:
+  workflow_dispatch:
+
+jobs:
+  tests:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v3
+        with: 
+            submodules: true
+      
+      - name: Checkout kubearmor repo
+        uses: actions/checkout@v3
+        with:
+            repository: kubearmor/KubeArmor
+            ref: main
+            path: Kubearmor
+    
+      - name: Setup a Kubernetes environment
+        run: |
+            ./Kubearmor/contribution/k3s/install_k3s.sh
+            sudo apt install socat
+          
+      - name: Install accuknoxcli, KubeArmor and Discovery Engine
+        uses: accuknox/install-action@v0.1.1
