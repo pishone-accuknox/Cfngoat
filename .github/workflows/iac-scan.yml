@@ -16,4 +16,5 @@ jobs:
         with:
           token: ${{ secrets.TOKEN }}
           tenant_id: ${{ secrets.TENANT_ID }}
+          soft_fail: true
     
