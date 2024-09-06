@@ -22,6 +22,18 @@ It's an ideal companion to testing build time Infrastructure as Code scanning to
 * [Contributing](#contributing)
 * [Support](#support)
 
+## IaC Optional input reference
+
+directory: example/
+file: example/tfplan.json # optional: provide the path for resource to be scanned. This will override the directory if both are provided.
+quiet: true # optional: display only failed checks
+soft_fail: true # optional: do not return an error code if there are failed checks
+framework: terraform # optional: run only on a specific infrastructure {cloudformation,terraform,kubernetes,all}
+skip_framework: terraform # optional: skip a specific infrastructure {cloudformation,terraform,kubernetes,all}
+output_format: sarif # optional: the output format, one of: cli, json, junitxml, github_failed_only, or sarif. Default: sarif
+output_file_path: reports/results.sarif # folder and name of results file
+baseline: cloudformation/.checkov.baseline # optional: Path to a generated baseline file. Will only report results not in the baseline.
+
 ## Introduction
 
 Cfngoat was built to enable DevSecOps design and implement a sustainable misconfiguration prevention strategy. It can be used to test a policy-as-code framework like  [Bridgecrew](https://bridgecrew.io/?utm_source=github&utm_medium=organic_oss&utm_campaign=cfngoat) & [Checkov](https://github.com/bridgecrewio/checkov/), inline-linters, pre-commit hooks or other code scanning methods.
