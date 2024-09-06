@@ -24,6 +24,7 @@ It's an ideal companion to testing build time Infrastructure as Code scanning to
 
 ## IaC Optional input reference
 
+```bash
 directory: example/
 file: example/tfplan.json # optional: provide the path for resource to be scanned. This will override the directory if both are provided.
 quiet: true # optional: display only failed checks
@@ -33,6 +34,7 @@ skip_framework: terraform # optional: skip a specific infrastructure {cloudforma
 output_format: sarif # optional: the output format, one of: cli, json, junitxml, github_failed_only, or sarif. Default: sarif
 output_file_path: reports/results.sarif # folder and name of results file
 baseline: cloudformation/.checkov.baseline # optional: Path to a generated baseline file. Will only report results not in the baseline.
+```
 
 ## Introduction
 
