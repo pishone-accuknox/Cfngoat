@@ -14,16 +14,6 @@ jobs:
       - name: Run IaC scan
         uses: accuknox/iac-scan-action@v0.0.1
         with:
-          file: 
-          directory: 
-          compact: 
-          quiet:
-          output_format: 
-          output_file_path:
-          framework: 
-          skip_framework: 
-          soft_fail:
-          endpoint:
           token: ${{ secrets.TOKEN }}
           tenant_id: ${{ secrets.TENANT_ID }}
     
