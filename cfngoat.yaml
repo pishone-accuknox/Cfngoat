@@ -941,14 +941,14 @@ Resources:
         - Key: git_org
           Value: bridgecrewio
 
-  PublicAccessBlock:
-  Type: AWS::S3::BucketPublicAccessBlock
-  Properties: 
-    Bucket: !Ref DataBucket
-    BlockPublicAcls: true
-    BlockPublicPolicy: true
-    IgnorePublicAcls: true
-    RestrictPublicBuckets: true
+  # PublicAccessBlock:
+  # Type: AWS::S3::BucketPublicAccessBlock
+  # Properties: 
+  #   Bucket: !Ref DataBucket
+  #   BlockPublicAcls: true
+  #   BlockPublicPolicy: true
+  #   IgnorePublicAcls: true
+  #   RestrictPublicBuckets: true
 
   ### TODO - Custom Upload of insecure document
   FinancialsBucket:
