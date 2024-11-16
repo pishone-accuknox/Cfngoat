@@ -6,6 +6,8 @@ jobs:
   dast-required:
     runs-on: ubuntu-latest
     steps:
+      - uses: actions/checkout@v4
+
       - name: Run AccuKnox DAST Scan
         uses: accuknox/dast-scan-action@v1.0.0
         with:
@@ -18,6 +20,8 @@ jobs:
   dast-all-scan:
     runs-on: ubuntu-latest
     steps:
+      - uses: actions/checkout@v4
+      
       - name: Run AccuKnox DAST Scan
         uses: accuknox/dast-scan-action@v1.0.0
         with:
