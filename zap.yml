@@ -1,0 +1,29 @@
+name: DAST Scan
+on:
+  workflow_dispatch:
+
+jobs:
+  dast-required:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Run AccuKnox DAST Scan
+        uses: accuknox/dast-scan-action@v1.0.0
+        with:
+          target_url: "http://testphp.vulnweb.com"
+          accuknox_endpoint: ${{ secrets.ACCUKNOX_ENDPOINT }}
+          tenant_id: ${{ secrets.TENANT_ID }}
+          accuknox_token: ${{ secrets.ACCUKNOX_TOKEN }}
+          label: "dastscan"
+
+  dast-all-scan:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Run AccuKnox DAST Scan
+        uses: accuknox/dast-scan-action@v1.0.0
+        with:
+          target_url: "http://testphp.vulnweb.com"
+          accuknox_endpoint: ${{ secrets.ACCUKNOX_ENDPOINT }}
+          tenant_id: ${{ secrets.TENANT_ID }}
+          accuknox_token: ${{ secrets.ACCUKNOX_TOKEN }}
+          label: "dastscan1"
+          scan_type: "baseline"
