@@ -15,6 +15,7 @@ jobs:
           tenant_id: ${{ secrets.TENANT_ID }}
           accuknox_token: ${{ secrets.ACCUKNOX_TOKEN }}
           label: "dastscan"
+          severity_threshold: "high"
 
   dast-all-scan:
     runs-on: ubuntu-latest
@@ -28,4 +29,5 @@ jobs:
           tenant_id: ${{ secrets.TENANT_ID }}
           accuknox_token: ${{ secrets.ACCUKNOX_TOKEN }}
           label: "dastscan1"
+          severity_threshold: "High"
           scan_type: "baseline"
