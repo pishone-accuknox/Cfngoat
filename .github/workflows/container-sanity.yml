@@ -2,9 +2,9 @@
 name: Container Scan (SANITY)
 
 on:
-  push:
-    branches:
-      - master
+  # push:
+  #   branches:
+  #     - master
   workflow_dispatch:
 
 jobs:
