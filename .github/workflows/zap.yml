@@ -8,7 +8,7 @@ jobs:
     steps:
 
       - name: Run AccuKnox DAST Scan
-        uses: accuknox/dast-scan-action@v1.0.0
+        uses: udit-uniyal/dast-scan-action@v1.0.0
         with:
           target_url: "http://testphp.vulnweb.com"
           accuknox_endpoint: ${{ secrets.ACCUKNOX_ENDPOINT }}
@@ -21,7 +21,7 @@ jobs:
     steps:
       
       - name: Run AccuKnox DAST Scan
-        uses: accuknox/dast-scan-action@v1.0.0
+        uses: udit-uniyal/dast-scan-action@v1.0.0
         with:
           target_url: "http://testphp.vulnweb.com"
           accuknox_endpoint: ${{ secrets.ACCUKNOX_ENDPOINT }}
