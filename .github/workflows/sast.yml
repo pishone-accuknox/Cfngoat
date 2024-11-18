@@ -1,0 +1,26 @@
+name: Accuknox SAST trial
+on: workflow_dispatch
+jobs:
+    accuknox-sast:
+        runs-on: ubuntu-latest
+        steps:
+            - name: Only Required
+              uses: udit-uniyal/accuknox-sast@1.0.0
+              with:
+                sonar_token: ${{ secrets.SONAR_TOKEN }}
+                sonar_host_url: ${{ secrets.SONAR_HOST_URL }}
+                accuknox_endpoint: ${{ secrets.ACCUKNOX_ENDPOINT }}
+                tenant_id: ${{ secrets.TENANT_ID }}
+                accuknox_token: ${{ secrets.ACCUKNOX_TOKEN }}
+                label: "sastgh"
+
+            - name: Including Optional
+              uses: udit-uniyal/accuknox-sast@1.0.0
+              with:
+                sonar_token: ${{ secrets.SONAR_TOKEN }}
+                sonar_host_url: ${{ secrets.SONAR_HOST_URL }}
+                accuknox_endpoint: ${{ secrets.ACCUKNOX_ENDPOINT }}
+                tenant_id: ${{ secrets.TENANT_ID }}
+                accuknox_token: ${{ secrets.ACCUKNOX_TOKEN }}
+                label: "sastgh"
+                sonar_project_key: "acc-rinc"
