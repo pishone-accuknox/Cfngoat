@@ -10,12 +10,13 @@ jobs:
       - name: AccuKnox ZAP DAST Scan
         uses: udit-uniyal/AccuKnox-DAST-Scan@1.0.0
         with:
-          target_url: "http://testphp.vulnweb.com"
+          target_url: "https://www.accuknox.com"
           accuknox_endpoint: ${{ secrets.ACCUKNOX_ENDPOINT }}
           tenant_id: ${{ secrets.TENANT_ID }}
           accuknox_token: ${{ secrets.ACCUKNOX_TOKEN }}
           label: "dastscan"
-          severity_threshold: "high"
+          severity_threshold: "Informational"
+          scan_type: "full-scan"
 
   dast-all-scan:
     runs-on: ubuntu-latest
